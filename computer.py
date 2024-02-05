@@ -29,8 +29,7 @@ class Computer:
         
     # What methods will you need?
 def main():
-    computer = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
-    
+    computer1 = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
 
 if __name__ == "__main__":
     main()
