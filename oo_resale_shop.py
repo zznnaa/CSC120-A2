@@ -22,16 +22,37 @@ class ResaleShop:
         self.inventory[self.itemID] = computer
         return self.itemID
 
-    #sell a computer
-    #refurbish computer
     #update computer price
+    # def update_price(self, item_id: int, new_price: int):
+    # if item_id in self.inventory:
+    #     self.inventory[item_id]["price"] = new_price
+    # else:
+    #     print("Item", item_id, "not found. Cannot update price.")
+
+    #sell a computer
+    def sell(self, item_id: int):
+        if item_id in self.inventory:
+            del self.inventory[item_id]
+            print("Item", item_id, "sold!")
+        else: 
+            print("Item", item_id, "not found. Please select another item to sell.")
+
+    #refurbish computer
     #update computer os
+    #print inventory
+    
 
 def main():
     computer_resale_store = ResaleShop({}, 0)
     computer1 = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
     computer_resale_store.buy(computer1)
     print(computer_resale_store.itemID)
+    item_id : int
+    item_id = 1
+    computer_resale_store.sell(item_id)
+
+#computer 1 and item_id placeholders here until I figure out the main.py code
+
 
 if __name__ == "__main__":
     main()
