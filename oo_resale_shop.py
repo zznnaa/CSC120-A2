@@ -53,7 +53,7 @@ class ResaleShop:
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
 
-    ##finish the update the os part of this function tmrw
+    ##finish the update the os part of this function tmrw 
                 
     #     computer = inventory[item_id] # locate the computer
     #     if int(computer["year_made"]) < 2000:
