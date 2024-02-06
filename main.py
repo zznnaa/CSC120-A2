@@ -29,7 +29,8 @@ def create_computer(description: str,
 
 def main():
     
-    ##change make a computer into using object oriented class, but theoretically main should still call all our functions
+    ##change "make a computer" function into using object oriented class, but theoretically main should still call all our functions
+    ##also might need to change item_id into an attribute of the computer?
     # First, let's make a computer
     computer = create_computer(
         "Mac Pro (Late 2013)",
