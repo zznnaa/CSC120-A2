@@ -23,11 +23,14 @@ class ResaleShop:
         return self.itemID
 
     #update computer price
-    # def update_price(self, item_id: int, new_price: int):
-    # if item_id in self.inventory:
-    #     self.inventory[item_id]["price"] = new_price
-    # else:
-    #     print("Item", item_id, "not found. Cannot update price.")
+    def update_price(self, item_id: int, new_price: int):
+        if item_id in self.inventory:
+            ##updating price like a dictionary, so here need to update price through computer class
+            ##need to call computer method to update price
+            #self.inventory[item_id]["price"] = new_price
+            self.inventory[item_id].price = new_price
+        else:
+            print("Item", item_id, "not found. Cannot update price.")
 
     #sell a computer
     def sell(self, item_id: int):
@@ -46,6 +49,7 @@ class ResaleShop:
             # For each item
             for item_id in self.inventory:
                 # Print its details
+                ## .__dict__ is to list all the attributes of the computer in a dictionary
                 print(f'Item ID: {item_id} : {self.inventory[item_id].__dict__}')
         else:
             print("No inventory to display.")
@@ -58,8 +62,12 @@ def main():
     computer_resale_store.buy(computer2)
     print(computer_resale_store.itemID)
     item_id : int
-    item_id = 1
+    item_id = 2
     computer_resale_store.sell(item_id)
+    computer_resale_store.print_inventory()
+    new_price : int
+    new_price = 9
+    computer_resale_store.update_price(1, new_price)
     computer_resale_store.print_inventory()
 
 ##computer 1 and item_id placeholders here until I figure out the main.py code
