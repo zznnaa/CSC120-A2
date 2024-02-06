@@ -17,11 +17,10 @@ class ResaleShop:
 
     # What methods will you need?
     #buy a computer
-    def buy(computer):
-    global itemID
-    itemID += 1 # increment itemID
-    inventory[itemID] = computer
-    return itemID
+    def buy(self, computer: Computer):
+        self.itemID += 1 # increment itemID
+        self.inventory[self.itemID] = computer
+        return self.itemID
 
     #sell a computer
     #refurbish computer
@@ -30,6 +29,9 @@ class ResaleShop:
 
 def main():
     computer_resale_store = ResaleShop({}, 0)
+    computer1 = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
+    computer_resale_store.buy(computer1)
+    print(computer_resale_store.itemID)
 
 if __name__ == "__main__":
     main()
