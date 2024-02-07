@@ -7,9 +7,6 @@ class ResaleShop:
     inventory: dict
     itemID: int
     
-    #inventory = [] #computer objects will go in here
-    #itemID = 0
-    
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
     def __init__(self, inventory, itemID):
@@ -104,8 +101,6 @@ def main():
     new_os = "new_os"
     computer_resale_store.refurbish(2, new_os)
     computer_resale_store.print_inventory()
-
-##computer 1 and item_id placeholders here until I figure out the main.py code
 
 
 if __name__ == "__main__":

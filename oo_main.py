@@ -17,11 +17,10 @@ from oo_resale_shop import ResaleShop
 
 def main():
     
-    ##change "make a computer" function into using object oriented class, but theoretically main should still call all our functions
-    ##also might need to change item_id into an attribute of the computer?
-    # First, let's make a computer
+    # First, let's make a computer & resale shop
     computer_resale_store = ResaleShop({}, 0)
     computer = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
+    #computer2 = Computer("2019 MacBook Pro", "Intel", 256, 16, "High Sierra", 2019, 1000)
 
     # Print a little banner
     print("-" * 21)
@@ -31,7 +30,9 @@ def main():
     # Add it to the resale store's inventory
     print("Buying", computer.description)
     print("Adding to inventory...")
+    #computer.computer_id = computer_resale_store.buy(computer)
     computer_id = computer_resale_store.buy(computer)
+    #computer2_id = computer_resale_store.buy(computer2)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
@@ -55,6 +56,8 @@ def main():
     print("Selling Item ID:", computer_id)
     computer_resale_store.sell(computer_id)
     
+    ##DO I NEED TWO COMPUTERS IN MY INVENTORY LIKE THE PROCEDURAL OR DO I JUST ADD TWO BY BUYING TWO OR DO I START MY INVENTORY WITH THAT OR WHAT
+
     # Make sure it worked by checking inventory
     print("Checking inventory...")
     computer_resale_store.print_inventory()
