@@ -1,4 +1,5 @@
 from computer import Computer
+from typing import Optional
 
 class ResaleShop:
 
@@ -49,11 +50,14 @@ class ResaleShop:
                 self.inventory[item_id].price = 550 # discounted price on machines 4-to-10 year old machines
             else:
                 self.inventory[item_id].price = 1000 # recent stuff
-
+            
+            if new_os is not None:
+                self.inventory[item_id].operating_system = new_os
+                #computer["operating_system"] = new_os # update details after installing new OS
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
 
-    ##finish the update the os part of this function tmrw 
+    ##finish the update the os part of this function tmrw
                 
     #     computer = inventory[item_id] # locate the computer
     #     if int(computer["year_made"]) < 2000:
@@ -97,7 +101,8 @@ def main():
     new_price = 9
     computer_resale_store.update_price(2, new_price)
     computer_resale_store.print_inventory()
-    computer_resale_store.refurbish(2)
+    new_os = "new_os"
+    computer_resale_store.refurbish(2, new_os)
     computer_resale_store.print_inventory()
 
 ##computer 1 and item_id placeholders here until I figure out the main.py code
