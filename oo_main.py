@@ -20,7 +20,7 @@ def main():
     # First, let's make a computer & resale shop
     computer_resale_store = ResaleShop({}, 0)
     computer = Computer("Mac Pro (Late 2013)", "3.5 GHc 6-Core Intel Xeon E5", 1024, 64, "macOS Big Sur", 2013, 1500)
-    #computer2 = Computer("2019 MacBook Pro", "Intel", 256, 16, "High Sierra", 2019, 1000)
+    computer2 = Computer("2019 MacBook Pro", "Intel", 256, 16, "High Sierra", 2019, 1000)
 
     # Print a little banner
     print("-" * 21)
@@ -30,9 +30,8 @@ def main():
     # Add it to the resale store's inventory
     print("Buying", computer.description)
     print("Adding to inventory...")
-    #computer.computer_id = computer_resale_store.buy(computer)
-    computer_id = computer_resale_store.buy(computer)
-    #computer2_id = computer_resale_store.buy(computer2)
+    computer.computer_id = computer_resale_store.buy(computer)
+    computer2.computer_id = computer_resale_store.buy(computer2)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
@@ -42,9 +41,9 @@ def main():
 
     # Now, let's refurbish it
     new_OS = "MacOS Monterey"
-    print("Refurbishing Item ID:", computer_id, ", updating OS to", new_OS)
+    print("Refurbishing Item ID:", computer.computer_id, ", updating OS to", new_OS)
     print("Updating inventory...")
-    computer_resale_store.refurbish(computer_id, new_OS)
+    computer_resale_store.refurbish(computer.computer_id, new_OS)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
@@ -53,10 +52,8 @@ def main():
     print("Done.\n")
     
     # Now, let's sell it!
-    print("Selling Item ID:", computer_id)
-    computer_resale_store.sell(computer_id)
-    
-    ##DO I NEED TWO COMPUTERS IN MY INVENTORY LIKE THE PROCEDURAL OR DO I JUST ADD TWO BY BUYING TWO OR DO I START MY INVENTORY WITH THAT OR WHAT
+    print("Selling Item ID:", computer.computer_id)
+    computer_resale_store.sell(computer.computer_id)
 
     # Make sure it worked by checking inventory
     print("Checking inventory...")
